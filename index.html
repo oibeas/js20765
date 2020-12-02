@@ -1,0 +1,66 @@
+<!-- Hacer una web que que permita introducir una edad al usuario y que le informe de si es mayor o menor de edad -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // let edad = document.getElementById("edad");
+        // let edad = window.prompt("Introduce tu edad")
+
+        // if (edad >= 18) {
+        //     alert("Eres mayor de edad")
+        // } else {
+        //     alert("Eres menor de edad")
+        // }
+
+        const MAYORIA_EDAD = 18;
+
+
+        function informarMayoriaEdad() {
+            //recoger el valor de la caja de texto, la edad
+            let cajaEdad = document.getElementById("edad")
+            console.log(cajaEdad.value);
+            let edad = cajaEdad.value //obtengo el valor
+
+            //validar si es numero
+            //si es un texto
+            //informar error
+            //si es numero
+            //comparar limite mayoria
+            if (edad >= MAYORIA_EDAD) {
+                //si es mayor limite
+                console.log("Es mayor de " + MAYORIA_EDAD);
+                //informar mayor
+            } else {
+                console.log("Es menor de " + MAYORIA_EDAD);
+                //si no informar error
+            }
+
+
+
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>BIENVENIDO</h1>
+    <hr>
+    <!-- <h3>Introduce tu edad: </h3> -->
+    <label for="edad">Introduzca edad:</label>
+    <input id="edad" type="number">
+    <input type="button" value="CALCULAR" onclick="informarMayoriaEdad()">
+
+</body>
+
+
+
+</html>
