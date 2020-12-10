@@ -18,13 +18,15 @@
 
     <script>
         this.onload = carga; //Poner e nombre de la funcion sin parentesis para que llame a la funcion cuando cargue la pagina, si pongo parentesis hace una llamada a la función ahora
-        let vidas = 5;
+        let vidas = 0;
         let respus = [];
         let respus2 = [];
 
         function carga() {
+            vidas = 5;
             let elemento_vidas = document.getElementById("vidas");
             elemento_vidas.innerHTML = vidas;
+            document.querySelector("#reiniciar").style.visibility = "hidden";
         }
 
         function numeroRandom(min, max) { //Funcion que genera un numero aleatorio entre un numero minimo(incluido) y uno maximo) excluido
@@ -46,6 +48,7 @@
             let elemento_vidas = document.getElementById("vidas");
             console.log(vidas);
             elemento_vidas.innerHTML = vidas; //Mostramos las vidas restantes
+            document.querySelector("#reiniciar").style.visibility = "visible"; //Muestro el boton reiniciar
 
             let elemento_imagen = document.getElementById("imagen"); // Primero capturo el campo de texto para la respuesta y la imagen
             let elemento_respuesta = document.getElementById("texto_respuesta");
@@ -90,6 +93,8 @@
                     respus2[respus2.length] = "↑";
                 }
                 vidas--;
+                let elemento_vidas = document.getElementById("vidas");
+                elemento_vidas.innerHTML = vidas;
                 console.log(respus2);
             }
         }
@@ -101,6 +106,7 @@
             respus = [];
             respus2 = [];
             limpiar();
+            document.querySelector("#reiniciar").style.visibility = "hidden";
             elemento_vidas = document.getElementById("vidas");
             elemento_vidas.innerHTML = vidas; //Mostramos las vidas restantes
             document.getElementById("respus").innerHTML = "";
@@ -136,7 +142,7 @@
 
     </div>
     <div>
-        <input type="button" value="REINICIAR" onclick="volverEmpezar()">
+        <input type="button" id="reiniciar" value="REINICIAR" onclick="volverEmpezar()">
     </div>
 
 
